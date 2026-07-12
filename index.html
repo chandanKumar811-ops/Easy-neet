@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Assistant</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>📚 AI Study Assistant</h1>
+</header>
+
+<nav>
+  <button onclick="showPage('planner')">📅 Planner</button>
+  <button onclick="showPage('timer')">⏱️ Timer</button>
+  <button onclick="showPage('notes')">📝 Notes</button>
+  <button onclick="showPage('flashcards')">🧠 Flashcards</button>
+  <button onclick="showPage('quiz')">❓ Quiz</button>
+  <button onclick="showPage('dashboard')">📊 Progress</button>
+</nav>
+
+<main>
+
+<section id="planner">
+  <h2>Study Planner</h2>
+</section>
+
+<section id="timer" hidden>
+  <h2>Study Timer</h2>
+</section>
+
+<section id="notes" hidden>
+  <h2>Notes</h2>
+</section>
+
+<section id="flashcards" hidden>
+  <h2>Flashcards</h2>
+</section>
+
+<section id="quiz" hidden>
+  <h2>Quiz Generator</h2>
+</section>
+
+<section id="dashboard" hidden>
+  <h2>Progress Dashboard</h2>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
