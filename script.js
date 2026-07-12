@@ -1212,6 +1212,20 @@ const startPYQ = document.getElementById("startPYQ");
 const submitPYQ = document.getElementById("submitPYQ");
 const pyqScore = document.getElementById("pyqScore");
 
+
+if (
+    pyqYear &&
+    pyqClass &&
+    pyqSubject &&
+    pyqUnit &&
+    startPYQ &&
+    submitPYQ
+) {
+
+    // KEEP ALL PYQ CODE BELOW THIS LINE
+
+}
+
 let currentPYQQuestions = [];
 
 
