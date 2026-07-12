@@ -1197,3 +1197,222 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 initializeApp();
+
+// ===============================
+// PYQ SYSTEM
+// ===============================
+
+const pyqYear = document.getElementById("pyqYear");
+const pyqClass = document.getElementById("pyqClass");
+const pyqSubject = document.getElementById("pyqSubject");
+const pyqUnit = document.getElementById("pyqUnit");
+
+const pyqContainer = document.getElementById("pyqContainer");
+const startPYQ = document.getElementById("startPYQ");
+const submitPYQ = document.getElementById("submitPYQ");
+const pyqScore = document.getElementById("pyqScore");
+
+let currentPYQQuestions = [];
+
+
+// Load Years
+
+function loadPYQYears(){
+
+    if(!window.pyqBank) return;
+
+    Object.keys(window.pyqBank).forEach(year=>{
+
+        pyqYear.innerHTML += `
+        <option value="${year}">
+        ${year}
+        </option>
+        `;
+
+    });
+
+}
+
+loadPYQYears();
+
+
+// Year Change
+
+pyqYear.addEventListener("change",()=>{
+
+    pyqClass.innerHTML =
+    `<option value="">Select Class</option>`;
+
+    pyqSubject.innerHTML =
+    `<option value="">Select Subject</option>`;
+
+    pyqUnit.innerHTML =
+    `<option value="">Select Unit</option>`;
+
+
+    let classes = window.pyqBank[pyqYear.value];
+
+
+    Object.keys(classes || {}).forEach(c=>{
+
+        pyqClass.innerHTML += `
+        <option value="${c}">
+        ${c}
+        </option>
+        `;
+
+    });
+
+});
+
+
+// Class Change
+
+pyqClass.addEventListener("change",()=>{
+
+    pyqSubject.innerHTML =
+    `<option value="">Select Subject</option>`;
+
+    pyqUnit.innerHTML =
+    `<option value="">Select Unit</option>`;
+
+
+    let subjects =
+    window.pyqBank[pyqYear.value][pyqClass.value];
+
+
+    Object.keys(subjects || {}).forEach(s=>{
+
+        pyqSubject.innerHTML += `
+        <option value="${s}">
+        ${s}
+        </option>
+        `;
+
+    });
+
+});
+
+
+// Subject Change
+
+pyqSubject.addEventListener("change",()=>{
+
+    pyqUnit.innerHTML =
+    `<option value="">Select Unit</option>`;
+
+
+    let units =
+    window.pyqBank[pyqYear.value]
+    [pyqClass.value]
+    [pyqSubject.value];
+
+
+    Object.keys(units || {}).forEach(u=>{
+
+        pyqUnit.innerHTML += `
+        <option value="${u}">
+        ${u}
+        </option>
+        `;
+
+    });
+
+});
+
+
+// Start PYQ
+
+startPYQ.addEventListener("click",()=>{
+
+
+    currentPYQQuestions =
+    window.pyqBank[pyqYear.value]
+    [pyqClass.value]
+    [pyqSubject.value]
+    [pyqUnit.value];
+
+
+    renderPYQ();
+
+});
+
+
+// Display Questions
+
+function renderPYQ(){
+
+    pyqContainer.innerHTML="";
+
+
+    currentPYQQuestions.forEach((q,index)=>{
+
+
+        pyqContainer.innerHTML += `
+
+        <div class="quizCard">
+
+        <h3>
+        ${index+1}. ${q.question}
+        </h3>
+
+
+        ${q.options.map((op,i)=>`
+
+        <label>
+
+        <input 
+        type="radio"
+        name="pyq${index}"
+        value="${i+1}">
+
+        ${op}
+
+        </label>
+
+        `).join("")}
+
+
+        </div>
+
+        `;
+
+
+    });
+
+}
+
+
+// Submit PYQ
+
+submitPYQ.addEventListener("click",()=>{
+
+
+    let score=0;
+
+
+    currentPYQQuestions.forEach((q,index)=>{
+
+
+        let selected =
+        document.querySelector(
+        `input[name="pyq${index}"]:checked`
+        );
+
+
+        if(selected &&
+        Number(selected.value)===q.answer){
+
+            score++;
+
+        }
+
+
+    });
+
+
+    pyqScore.innerHTML =
+    `Score: ${score}/${currentPYQQuestions.length}`;
+
+
+});
