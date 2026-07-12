@@ -1234,7 +1234,7 @@ function loadPYQYears(){
 }
 
 loadPYQYears();
-
+console.log(window.pyqBank);
 
 // Year Change
 
