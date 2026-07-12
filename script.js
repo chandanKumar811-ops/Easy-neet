@@ -18,7 +18,7 @@ function saveData(key, value) {
 
 let tasks = getData("tasks", []);
 let flashcards = getData("flashcards", []);
-let quizQuestions = [];
+let quizQuestions = window.questionBank || [];
 let notes = localStorage.getItem("notes") || "";
 
 let currentCard = 0;
