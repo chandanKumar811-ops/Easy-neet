@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Study Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>📚 AI Study Assistant</h1>
+<p>Plan • Study • Practice • Track Progress</p>
+</header>
+
+<nav>
+<button onclick="showPage('planner')">📅 Planner</button>
+<button onclick="showPage('timer')">⏱️ Timer</button>
+<button onclick="showPage('notes')">📝 Notes</button>
+<button onclick="showPage('flashcards')">🧠 Flashcards</button>
+<button onclick="showPage('quiz')">❓ Quiz</button>
+<button onclick="showPage('dashboard')">📊 Dashboard</button>
+</nav>
+
+<main>
+
+<section id="planner">
+<h2>📅 Study Planner</h2>
+<input id="taskInput" type="text" placeholder="Enter study task">
+<button onclick="addTask()">Add Task</button>
+<div id="taskList"></div>
+</section>
+
+<section id="timer" hidden>
+<h2>⏱️ Pomodoro Timer</h2>
+<div class="timer-box">
+<div id="timerDisplay">25:00</div>
+<div class="timer-buttons">
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
+</div>
+<p>
+<button onclick="setPomodoro(15)">15 Min</button>
+<button onclick="setPomodoro(25)">25 Min</button>
+<button onclick="setPomodoro(50)">50 Min</button>
+</p>
+</div>
+</section>
+
+<section id="notes" hidden>
+<h2>📝 Notes</h2>
+<textarea id="noteInput" placeholder="Write your notes"></textarea>
+<button onclick="addNote()">Save Note</button>
+<div id="notesList"></div>
+</section>
+
+<section id="flashcards" hidden>
+<h2>🧠 Flashcards</h2>
+<input id="questionInput" placeholder="Question">
+<input id="answerInput" placeholder="Answer">
+<button onclick="addFlashcard()">Add Flashcard</button>
+<div id="flashcard" class="flashcard" onclick="flipFlashcard()">No Flashcards</div>
+<div class="timer-buttons">
+<button onclick="previousFlashcard()">Previous</button>
+<button onclick="flipFlashcard()">Flip</button>
+<button onclick="nextFlashcard()">Next</button>
+<button onclick="deleteFlashcard()">Delete</button>
+</div>
+</section>
+
+<section id="quiz" hidden>
+<h2>❓ Quiz</h2>
+<h3 id="quizQuestion">Loading...</h3>
+<div id="quizOptions"></div>
+</section>
+
+<section id="dashboard" hidden>
+<h2>📊 Progress Dashboard</h2>
+<div class="progress-box">
+<h3 id="progressText">0% Study Tasks Completed</h3>
+<div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+<h3 id="dashboardQuiz">Latest Quiz Score: 0/5</h3>
+</div>
+</section>
+
+</main>
+
+<footer><p>© 2026 AI Study Assistant</p></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
