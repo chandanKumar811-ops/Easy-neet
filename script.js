@@ -413,6 +413,84 @@ if (taskInput) {
     });
 
 }
+
+// ---------- PYQ System ----------
+
+const pyqContainer = document.getElementById("pyqContainer");
+const startPYQBtn = document.getElementById("startPYQ");
+const pyqScore = document.getElementById("pyqScore");
+
+let activePYQ = [];
+let pyqAnswers = {};
+
+function loadPYQ() {
+
+    if (!window.pyqQuestions) {
+        pyqContainer.innerHTML =
+        "<h3>No PYQ available</h3>";
+        return;
+    }
+
+    activePYQ = [...window.pyqQuestions];
+
+    pyqContainer.innerHTML = "";
+
+    activePYQ.forEach((q, index) => {
+
+        pyqContainer.innerHTML += `
+
+        <div class="quizCard">
+
+            <h3>${index + 1}. ${q.question}</h3>
+
+            ${q.options.map((option, i) => `
+                <label>
+                    <input 
+                    type="radio"
+                    name="pyq${index}"
+                    value="${i + 1}">
+                    ${option}
+                </label>
+            `).join("")}
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+startPYQBtn.addEventListener("click", () => {
+
+    loadPYQ();
+
+});
+
+
+function checkPYQ() {
+
+    let score = 0;
+
+    activePYQ.forEach((q,index)=>{
+
+        let selected =
+        document.querySelector(
+        `input[name="pyq${index}"]:checked`
+        );
+
+        if(selected && Number(selected.value) === q.answer){
+            score++;
+        }
+
+    });
+
+    pyqScore.textContent =
+    `Score: ${score}/${activePYQ.length}`;
+
+}
+
 /* ===================================
    AI Study Assistant
    script.js (Part 3.5)
