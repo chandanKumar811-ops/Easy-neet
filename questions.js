@@ -38,7 +38,7 @@ const questionBank = [
         subject: "Chemistry"
     }
 
-];
+
 
 // Questions 1-20
 
