@@ -278,6 +278,8 @@ const questionBank = [
         "Ribosome",
         "Vacuole"
     ],
-    answer: 2,
+        answer: 2,
     subject: "Biology"
-},
+}
+
+];
