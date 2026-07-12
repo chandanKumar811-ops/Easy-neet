@@ -35,10 +35,10 @@ const questionBank = [
             "NaCl"
         ],
         answer: 2,
-        subject: "Chemistry"
-    }
+            subject: "Chemistry"
+},
 
-
+// Questions 1-20 start here
 
 // Questions 1-20
 
