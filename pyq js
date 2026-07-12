@@ -1,0 +1,126 @@
+// Easy-NEET PYQ Database
+// Structure: Year → Class → Subject → Unit
+
+window.pyqBank = {
+
+    "NEET 2026 Practice": {
+
+        "Class 11": {
+
+            "Biology": {
+
+                "Unit 1: Diversity in Living World": [
+
+                    {
+                        question: "The correct sequence of taxonomic categories is:",
+                        options: [
+                            "Kingdom → Class → Order → Family → Genus → Species",
+                            "Species → Genus → Family → Order → Class → Kingdom",
+                            "Kingdom → Family → Order → Class → Genus → Species",
+                            "Species → Family → Genus → Order → Class → Kingdom"
+                        ],
+                        answer: 2,
+                        chapter: "Taxonomy"
+                    },
+
+
+                    {
+                        question: "The basic unit of classification is:",
+                        options: [
+                            "Genus",
+                            "Family",
+                            "Species",
+                            "Kingdom"
+                        ],
+                        answer: 3,
+                        chapter: "Taxonomy"
+                    },
+
+
+                    {
+                        question: "Five kingdom classification was proposed by:",
+                        options: [
+                            "Robert Hooke",
+                            "R.H. Whittaker",
+                            "Charles Darwin",
+                            "Linnaeus"
+                        ],
+                        answer: 2,
+                        chapter: "Biological Classification"
+                    },
+
+
+                    {
+                        question: "Lichens represent a symbiotic association between:",
+                        options: [
+                            "Algae and fungi",
+                            "Bacteria and fungi",
+                            "Virus and algae",
+                            "Plant and bacteria"
+                        ],
+                        answer: 1,
+                        chapter: "Biological Classification"
+                    },
+
+
+                    {
+                        question: "Which kingdom includes prokaryotic organisms?",
+                        options: [
+                            "Protista",
+                            "Fungi",
+                            "Monera",
+                            "Plantae"
+                        ],
+                        answer: 3,
+                        chapter: "Biological Classification"
+                    },
+
+
+                    {
+                        question: "The scientific name of humans is:",
+                        options: [
+                            "Homo sapiens",
+                            "Homo erectus",
+                            "Pan troglodytes",
+                            "Australopithecus"
+                        ],
+                        answer: 1,
+                        chapter: "Taxonomy"
+                    },
+
+
+                    {
+                        question: "Viruses are considered living only when they are:",
+                        options: [
+                            "Outside host",
+                            "Inside host cell",
+                            "In water",
+                            "In air"
+                        ],
+                        answer: 2,
+                        chapter: "Virus"
+                    },
+
+
+                    {
+                        question: "The study of classification of organisms is called:",
+                        options: [
+                            "Ecology",
+                            "Taxonomy",
+                            "Physiology",
+                            "Anatomy"
+                        ],
+                        answer: 2,
+                        chapter: "Taxonomy"
+                    }
+
+
+                ]
+
+            }
+
+        }
+
+    }
+
+};
