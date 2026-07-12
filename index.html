@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Study Assistant</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+<h1>📚 AI Study Assistant</h1>
+
+<button id="themeBtn">
+🌙 Dark Mode
+</button>
+</header>
+
+<nav>
+
+<button class="tab active" data-tab="planner">
+📅 Planner
+</button>
+
+<button class="tab" data-tab="timer">
+⏱ Timer
+</button>
+
+<button class="tab" data-tab="notes">
+📝 Notes
+</button>
+
+<button class="tab" data-tab="flashcards">
+🧠 Flashcards
+</button>
+
+<button class="tab" data-tab="quiz">
+❓ Quiz
+</button>
+
+<button class="tab" data-tab="dashboard">
+📊 Dashboard
+</button>
+
+</nav>
+
+<main>
+
+<!-- Planner -->
+
+<section id="planner" class="page active">
+
+<h2>Study Planner</h2>
+
+<div class="card">
+
+<input
+id="taskInput"
+type="text"
+placeholder="Enter study task">
+
+<input
+id="taskDate"
+type="date">
+
+<button id="addTask">
+Add Task
+</button>
+
+</div>
+
+<div id="taskList"></div>
+
+</section>
+
+<!-- Timer -->
+
+<section id="timer" class="page">
+
+<h2>Pomodoro Timer</h2>
+
+<div class="card center">
+
+<h1 id="timerDisplay">
+25:00
+</h1>
+
+<div class="presetButtons">
+
+<button class="preset" data-time="15">
+15 Min
+</button>
+
+<button class="preset" data-time="25">
+25 Min
+</button>
+
+<button class="preset" data-time="50">
+50 Min
+</button>
+
+</div>
+
+<div class="timerButtons">
+
+<button id="startTimer">
+Start
+</button>
+
+<button id="pauseTimer">
+Pause
+</button>
+
+<button id="resetTimer">
+Reset
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Notes -->
+
+<section id="notes" class="page">
+
+<h2>Notes</h2>
+
+<div class="card">
+
+<textarea
+id="notesArea"
+rows="12"
+placeholder="Write your study notes..."></textarea>
+
+<button id="saveNotes">
+Save Notes
+</button>
+
+</div>
+
+</section>
+
+<!-- Flashcards -->
+
+<section id="flashcards" class="page">
+
+<h2>Flashcards</h2>
+
+<div class="card">
+
+<input
+id="questionInput"
+placeholder="Question">
+
+<input
+id="answerInput"
+placeholder="Answer">
+
+<button id="addCard">
+Create Card
+</button>
+
+</div>
+
+<div id="flashcardBox">
+
+<div id="flashcard">
+No Flashcards
+</div>
+
+</div>
+
+<div class="flashButtons">
+
+<button id="prevCard">
+Previous
+</button>
+
+<button id="flipCard">
+Flip
+</button>
+
+<button id="nextCard">
+Next
+</button>
+
+<button id="deleteCard">
+Delete
+</button>
+
+</div>
+
+</section>
+
+<!-- Quiz -->
+
+<section id="quiz" class="page">
+
+<h2>Quiz Generator</h2>
+
+<div class="card">
+
+<input
+id="quizQuestion"
+placeholder="Question">
+
+<input
+id="option1"
+placeholder="Option 1">
+
+<input
+id="option2"
+placeholder="Option 2">
+
+<input
+id="option3"
+placeholder="Option 3">
+
+<input
+id="option4"
+placeholder="Option 4">
+
+<input
+id="correctOption"
+type="number"
+min="1"
+max="4"
+placeholder="Correct Option (1-4)">
+
+<button id="addQuiz">
+Add Question
+</button>
+
+</div>
+
+<div id="quizContainer"></div>
+
+<button id="submitQuiz">
+Submit Quiz
+</button>
+
+<h3 id="quizScore"></h3>
+
+</section>
+
+<!-- Dashboard -->
+
+<section id="dashboard" class="page">
+
+<h2>Progress Dashboard</h2>
+
+<div class="stats">
+
+<div class="statCard">
+<h3>Total Tasks</h3>
+<p id="totalTasks">0</p>
+</div>
+
+<div class="statCard">
+<h3>Completed</h3>
+<p id="completedTasks">0</p>
+</div>
+
+<div class="statCard">
+<h3>Flashcards</h3>
+<p id="cardCount">0</p>
+</div>
+
+<div class="statCard">
+<h3>Quiz Questions</h3>
+<p id="quizCount">0</p>
+</div>
+
+</div>
+
+<div class="progressBox">
+
+<div class="progressBar">
+
+<div id="progressFill"></div>
+
+</div>
+
+<p id="progressText">
+0% Completed
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+Made with ❤️ using HTML, CSS & JavaScript
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
