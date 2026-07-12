@@ -1,6 +1,6 @@
 // Easy-NEET Question Bank
 
-const questionBank = [
+window.questionBank = [
 
     {
         question: "The powerhouse of the cell is:",
