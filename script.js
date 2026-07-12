@@ -18,9 +18,7 @@ function saveData(key, value) {
 
 let tasks = getData("tasks", []);
 let flashcards = getData("flashcards", []);
-let quizQuestions = typeof questionBank !== "undefined"
-    ? [...questionBank]
-    : [];
+let quizQuestions = [];
 let notes = localStorage.getItem("notes") || "";
 
 let currentCard = 0;
